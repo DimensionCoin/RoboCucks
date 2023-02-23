@@ -1,11 +1,8 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 /* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+
 
 /* Set core body defaults */
 body {
@@ -24,7 +21,7 @@ select {
 }
 
 :root {
-  --background-color: #1c1e21;
+  --background-color: #0a131f;
   --white: #ffffff;
   --tw-color1: #a855f7;
   --tw-color1-hover: #9333ea;
@@ -42,3 +39,6 @@ body {
 h2 {
   font-size: 2rem;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

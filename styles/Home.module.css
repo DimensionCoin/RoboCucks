@@ -1,11 +1,12 @@
+
 .container {
-  margin-top: 96px;
+  margin-top: 45px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
-  padding: 0 24px;
+  padding: 0px 24px;
 }
 
 .iconContainer {
@@ -18,15 +19,24 @@
 }
 
 .h1 {
-  margin-bottom: 0px;
+  margin-bottom: 15px;
+  font-size: 100px;
+  color: #11acac;
 }
 
 .explain {
-  font-size: 1.125rem;
+  font-size: 1.11rem;
+  margin-bottom: 18px;
+  outline: 0.5px solid rgb(183, 0, 122);
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  color: rgb(28, 241, 248);
+  
 }
 
 .lightPurple {
-  color: #e011a7;
+  color: #b90c88;
 }
 
 .gallery {
@@ -34,19 +44,29 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 18px;
   flex-wrap: wrap;
+  row-gap: 40px;
 }
 
 .card {
-  outline: 1px solid grey;
-  width: 240px;
-  border-radius: 16px;
-  margin:8px; 
+  outline: 1px solid rgb(183, 0, 122);
+  width: 320px;
+  border-radius: 12px;
+  
+  margin: 11px; 
+  margin-top: 4px;
+  padding: 10px;
+  padding-top: 10px;
+  box-shadow: 0 10px 35px -15px rgba(227, 18, 213, 0.767);
 }
 
 .thumbnail {
-  height: 120px;
+  height: 400px;
+  width: 320px;
+  border-radius: 18px;
+  outline: 1px solid rgb(32, 184, 195);
+  box-shadow: 1px 10px 20px -15px rgb(202, 174, 193);
 }
 
 .buttons {
@@ -54,18 +74,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  padding: 16px;
+  gap: 18px;
+  padding: 20px;
 }
 
 .mintButton {
-  background: linear-gradient(90deg, #F213A4 0%, #5204BF 100%);
-  width:256px;
-  height: 42px;
-  padding:8px;
+  background: linear-gradient(145deg, #F213A4 8%, #0487bf 80%);
+  width:150px;
+  height: 50px;
+  padding:9px;
   border-radius: 16px;
   color: white;
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.225rem;
+  font-weight: 900;
   border: none;
+  margin-top: 8px;
+  margin-right: 5px;
 }

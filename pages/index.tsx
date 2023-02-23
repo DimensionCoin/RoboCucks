@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage,  } from "next";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useWallet } from "@solana/wallet-adapter-react";
 import {
@@ -7,13 +7,16 @@ import {
   useNFTs,
 } from "@thirdweb-dev/react/solana";
 import Card from "../components/Card";
-import MintButton from "../components/MintButton";
+import HeaderIMG from "../styles/Headerweb.png"
 import styles from "../styles/Home.module.css";
+import Header from "../components/Header"
+import Image from "next/image"
+import Login from "../components/Login"
 
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
 
-const PROGRAM_ADDRESS = "CyqFcqwSyV9GZprRE3oRwFb4N5nRFdqZEFGnA6eB1j3U";
+const PROGRAM_ADDRESS = "D8gdMrknp9G4DtHUiGwoVzrkt8evnKbJJLRBVv9kfL6A";
 
 const Home: NextPage = () => {
   const { data: program } = useProgram(PROGRAM_ADDRESS, "nft-collection");
@@ -23,28 +26,33 @@ const Home: NextPage = () => {
 
   const { publicKey } = useWallet();
 
+  if (!publicKey)
+  return <Login/>
+
   return (
     <>
+      <Header/>
       <div className={styles.container}>
         {loadingMetadata ? (
           <div className={styles.loading}>Loading...</div>
         ) : (
           <>
-            <h1 className={styles.h1}>{metadata?.name}</h1>
+          <div className="bg-back bg-cover">
+          <h1 className=" text-6xl text-[#0db6d8fa] p-6 px-12 rounded-lg shadow-sm shadow-[#b215b7fa] top-[90px]">{metadata?.name}</h1>
+          </div>
             <div className={styles.iconContainer}>
               <img
-                className={styles.thumbnail}
+                className="border border-[#a90ea6] rounded-lg h-[460px] md:h-[660px]"
                 src={String(metadata?.image)}
                 alt={String(metadata?.name)}
-                height={120}
+                
               />
             </div>
             <p className={styles.explain}>{metadata?.description}</p>
           </>
         )}
         <div className={styles.buttons}>
-          <WalletMultiButton />
-          {publicKey && <MintButton />}
+
         </div>
 
         {isLoading ? (

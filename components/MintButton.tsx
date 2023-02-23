@@ -5,9 +5,10 @@ import {
   useNFTs,
   useMintNFT,
 } from "@thirdweb-dev/react/solana";
+import Link from "next/link";
 
 // Replace this with your program
-const PROGRAM_ADDRESS = "CyqFcqwSyV9GZprRE3oRwFb4N5nRFdqZEFGnA6eB1j3U";
+const PROGRAM_ADDRESS = "D8gdMrknp9G4DtHUiGwoVzrkt8evnKbJJLRBVv9kfL6A";
 
 const MintButton = () => {
   const { data: program } = useProgram(PROGRAM_ADDRESS, "nft-collection");
@@ -28,9 +29,15 @@ const MintButton = () => {
   };
 
   return (
-    <button onClick={mint} className={styles.mintButton}>
-      {isLoading ? "Minting..." : "Mint"}
-    </button>
+    <Link
+      href="https://magiceden.io/marketplace/D8gdMrknp9G4DtHUiGwoVzrkt8evnKbJJLRBVv9kfL6A"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <button className="border border-pink-800 mt-3 p-3 rounded-full bg-gradient-to-br from-[#7f15ac] to-[#42dce4] font-bold hover:text-black">
+        {isLoading ? "Buying..." : "Buy on Magic Eden"}
+      </button>
+    </Link>
   );
 };
 
