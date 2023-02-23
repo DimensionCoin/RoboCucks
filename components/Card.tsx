@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import solonaFm from "../styles/solanFm.png";
+import magicEden from "../styles/magicEden.png"
 
 type Props = {
   nft: NFT;
@@ -35,13 +36,17 @@ const Card: FC<Props> = ({ nft }) => {
           nft.owner.substring(nft.owner.length - REVEALED_COUNT)}
       </p>
       <div className="flex justify-between">
-        <div className="mt-2 flex gap-4 ml-2">
-          <TwitterShareButton url={`#${nft.metadata.name.replace(/\s+/g, "")} #RoboCucks`}>
+        <div className="mt-2 flex gap-2 ml-2">
+        <TwitterShareButton url={`#RoboCucks ${nft.metadata.name}`}>
             <TwitterIcon className="h-6 w-6 rounded-full" />
           </TwitterShareButton>
-          <RedditShareButton url={`#${nft.metadata.name.replace(/\s+/g, "")} #RoboCucks`}>
+          <RedditShareButton url={`#RoboCucks ${nft.metadata.name}`}>
             <RedditIcon className="h-6 w-6 rounded-full" />
           </RedditShareButton>
+          <Link href={`https://magiceden.io/item-details/${nft.metadata.id}?name=${nft.metadata.name}`} target="_blank" rel="noopener noreferrer" className="">
+            <Image src={magicEden} alt="MagicEden" className="h-[35px] mt- w-[35px] rounded-full "/>
+      
+          </Link>
         </div>
         <div className="mt-2 mr-2">
           <Link
@@ -66,3 +71,4 @@ const Card: FC<Props> = ({ nft }) => {
 };
 
 export default Card;
+
